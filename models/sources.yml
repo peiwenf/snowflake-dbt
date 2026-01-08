@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: retail_src            
+    database: SE_DEMO           
+    schema: RETAIL              
+    tables:
+      - name: SNOW_STORE_SALES      
+      - name: SNOW_CUSTOMER
+      - name: SNOW_DATE
+      - name: SNOW_ITEM

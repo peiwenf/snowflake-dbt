@@ -1,0 +1,41 @@
+version: 2
+
+semantic_models:
+  - name: store_sales
+    model: ref('fct_store_sales')
+
+    defaults:
+      agg_time_dimension: sold_at
+
+    entities:
+      - name: ticket
+        type: primary
+        expr: ss_ticket_number
+
+    dimensions:
+      - name: sold_at
+        type: time
+        expr: sold_at
+        type_params:
+          time_granularity: day
+
+      - name: brand
+        type: categorical
+        expr: i_brand
+
+      - name: category
+        type: categorical
+        expr: i_category
+
+      - name: birth_country
+        type: categorical
+        expr: c_birth_country
+
+    measures:
+      - name: net_paid
+        agg: sum
+        expr: ss_net_paid
+
+      - name: tickets
+        agg: count_distinct
+        expr: ss_ticket_number
