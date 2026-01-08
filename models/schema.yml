@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: time_spine
+    config:
+      meta:
+        metricflow_time_spine:
+          time_column: date_day
+          time_granularity: day

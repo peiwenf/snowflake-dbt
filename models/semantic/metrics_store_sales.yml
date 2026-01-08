@@ -1,0 +1,25 @@
+version: 2
+
+metrics:
+  - name: total_net_paid
+    label: "Total Net Paid"
+    description: "Sum of net paid across store sales."
+    type: simple
+    type_params:
+      measure: net_paid
+
+  - name: total_tickets
+    label: "Total Tickets"
+    description: "Distinct count of tickets."
+    type: simple
+    type_params:
+      measure: tickets
+
+  - name: avg_ticket_value
+    label: "Average Ticket Value"
+    description: "Average net paid per ticket (net_paid / tickets)."
+    type: ratio
+    type_params:
+      numerator: total_net_paid
+      denominator: total_tickets
+
