@@ -5,7 +5,7 @@ semantic_models:
     model: ref('fct_store_sales')
 
     defaults:
-      agg_time_dimension: sold_at
+      agg_time_dimension: sold_date
 
     entities:
       - name: ticket
@@ -13,9 +13,9 @@ semantic_models:
         expr: ss_ticket_number
 
     dimensions:
-      - name: sold_at
+      - name: sold_date
         type: time
-        expr: sold_at
+        expr: sold_date
         type_params:
           time_granularity: day
 

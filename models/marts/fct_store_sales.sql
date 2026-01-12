@@ -39,6 +39,7 @@ select
     ss.ss_customer_sk,
 
     -- time
+    to_date(d.d_date) as sold_date,
     cast(d.d_date as timestamp_tz) as sold_at,
 
     -- customer dims
